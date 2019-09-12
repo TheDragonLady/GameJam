@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public float tileHeight = 10f;
     public float tileFreq;
 
-
+    public GameObject destroyTrigger;
 
     public static GameManager instance = null;
 
@@ -43,24 +43,25 @@ public class GameManager : MonoBehaviour
         Instantiate(player, new Vector3(transform.position.x, playerHeight, transform.position.z), Quaternion.identity);
     }
 
-    private void Update()
-    {
-
-    }
-
     public void SpawnTile()
     {
         float x = Random.Range(-tileRange, tileRange);
-        Instantiate(tile, new Vector3(x, tileHeight, transform.position.z), Quaternion.identity);
+        Instantiate(tile, new Vector3(x, tileHeight, transform.position.z), rotation: Quaternion.Euler(90f, transform.rotation.y, transform.rotation.z));
     }
 
-    public void Hit()
+    public void CheckScore()
     {
-        
+        if(playerLife < 1)
+        {
+            GameOver();
+        }
     }
 
-    public void Miss()
+    public void GameOver()
     {
+    }
 
+    public void GameWon()
+    {
     }
 }

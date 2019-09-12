@@ -15,12 +15,14 @@ public class Tile : MonoBehaviour
     //Miss
     private void OnCollisionEnter(Collision collision)
     {
-        GameManager.instance.Miss();
+        Destroy(gameObject);
+        GameManager.instance.playerScore--;
+        GameManager.instance.CheckScore();
     }
 
     //Hit
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.instance.Hit();
+        
     }
 }
