@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public int playerScore;
     public int playerLife = 3;
+    public float playerHeight = 0.5f;
 
     public GameObject tile;
     public float tileRange;
+    public float tileHeight = 10f;
     public float tileFreq;
 
 
@@ -33,12 +35,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        InvokeRepeating("SpawnTile", 0, tileFreq);
     }
 
     public void Setup()
     {
-        Instantiate(player, transform.position, Quaternion.identity);
+        Instantiate(player, new Vector3(transform.position.x, playerHeight, transform.position.z), Quaternion.identity);
     }
 
     private void Update()
@@ -48,10 +50,11 @@ public class GameManager : MonoBehaviour
 
     public void SpawnTile()
     {
-        Instantiate(tile, transform.position, Quaternion.identity);
+        float x = Random.Range(-tileRange, tileRange);
+        Instantiate(tile, new Vector3(x, tileHeight, transform.position.z), Quaternion.identity);
     }
 
-    public void hit()
+    public void Hit()
     {
         
     }

@@ -12,15 +12,15 @@ public class Tile : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    //hit
+    //Miss
     private void OnCollisionEnter(Collision collision)
     {
-        GameManager.instance.hit();
+        GameManager.instance.Miss();
     }
 
-    //miss
+    //Hit
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.instance.Miss();
+        GameManager.instance.Hit();
     }
 }
