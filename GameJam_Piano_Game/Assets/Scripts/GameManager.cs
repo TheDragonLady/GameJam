@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public float tileHeight = 10f;
     public float tileFreq;
 
+    public int score = 0;
+
     public GameObject destroyTrigger;
 
     public static GameManager instance = null;
