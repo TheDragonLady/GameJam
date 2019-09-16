@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4204483722029337962}
   - component: {fileID: 7594716866807034259}
   - component: {fileID: 4032273676655884967}
+  - component: {fileID: 8966819716321065040}
+  - component: {fileID: -4313328120980021806}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -91,3 +93,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSpeed: 1
+  hitScale: 2
+  growthTime: 0.5
+  growthWait: 0.2
+  growthSpeed: 1
+--- !u!65 &8966819716321065040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167573472782927183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0036983, y: 0.577465, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!81 &-4313328120980021806
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167573472782927183}
+  m_Enabled: 1
