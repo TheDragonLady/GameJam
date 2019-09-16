@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    GameManager GM;
     public float PlayerSpeed = 1f;
 
     private Vector3 playerPos = new Vector3(0, 1.3f, 0);
@@ -44,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
     {
         collider.enabled = true;
         transform.localScale = bigSize;
-        //GameManager.instance.Score;
     }
 
     public void Shrink()

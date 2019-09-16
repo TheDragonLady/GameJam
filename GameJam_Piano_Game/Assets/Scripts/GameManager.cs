@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         if(playerLife < 1)
         {
             GameOver();
+            Debug.Log("Game OVer!");
         }
     }
 

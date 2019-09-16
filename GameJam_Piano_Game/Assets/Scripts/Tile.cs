@@ -8,6 +8,7 @@ public class Tile : MonoBehaviour
     AudioSource ding;
     float pitch;
     MeshRenderer mesh;
+    GameManager GM;
 
     void Start()
     {
@@ -20,8 +21,6 @@ public class Tile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
-        GameManager.instance.playerScore--;
-        GameManager.instance.CheckScore();
     }
 
     //Hit
