@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -56,15 +57,22 @@ public class GameManager : MonoBehaviour
         if(playerLife < 1)
         {
             GameOver();
-            Debug.Log("Game OVer!");
+            Invoke("Reset", 3);
         }
     }
 
     public void GameOver()
     {
+        Time.timeScale = 0.25f;
     }
 
     public void GameWon()
     {
+    }
+
+    public void Reset()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
     }
 }
